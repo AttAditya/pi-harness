@@ -3362,6 +3362,9 @@ export class InteractiveMode {
 					this.ui.requestRender();
 				}
 				if (event.result.details?.exit) {
+					this.workingMessage = "Shutting down...";
+					this.showWorkingStatusIndicator();
+					this.ui.requestRender();
 					await this.shutdown();
 				}
 				break;
