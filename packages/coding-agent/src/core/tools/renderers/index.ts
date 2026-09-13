@@ -10,6 +10,7 @@ import type { ToolDefinition } from "../../extensions/types.ts";
 import type { ToolName } from "../index.ts";
 import { createShellRenderers } from "./bash.ts";
 import { editRenderers } from "./edit.ts";
+import { exitRenderers } from "./exit.ts";
 import { findRenderers } from "./find.ts";
 import { grepRenderers } from "./grep.ts";
 import { lsRenderers } from "./ls.ts";
@@ -26,6 +27,7 @@ export {
 	lsRenderers,
 	readRenderers,
 	writeRenderers,
+	exitRenderers,
 };
 
 /** Renderers for every built-in tool, keyed by tool name. */
@@ -39,6 +41,7 @@ export function createAllToolRenderers(): Record<ToolName, ToolRenderers> {
 		grep: grepRenderers,
 		find: findRenderers,
 		ls: lsRenderers,
+		exit: exitRenderers,
 	};
 }
 

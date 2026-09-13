@@ -3361,6 +3361,9 @@ export class InteractiveMode {
 					this.pendingTools.delete(event.toolCallId);
 					this.ui.requestRender();
 				}
+				if (event.result.details?.exit) {
+					await this.shutdown();
+				}
 				break;
 			}
 

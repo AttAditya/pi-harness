@@ -399,7 +399,7 @@ export function mapStopReason(reason: FinishReason): StopReason {
 		case FinishReason.NO_IMAGE:
 			return "error";
 		default: {
-			const _exhaustive: never = reason;
+			const _exhaustive = reason;
 			throw new Error(`Unhandled stop reason: ${_exhaustive}`);
 		}
 	}
